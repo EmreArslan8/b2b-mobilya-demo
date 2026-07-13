@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yönetim Paneli — Mobilya Ağı</title>
+<meta name="description" content="Yönetim paneli: firma onayları, talep ve teklif takibi, raporlar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="panel-layout">
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="panel-side" data-section-nav>
+    <a href="index.html" class="wordmark">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect x="4" y="4" width="32" height="32" rx="6" fill="none" stroke="#F5F1E8" stroke-width="1.5"/>
+        <path d="M11 27 V17 l9-6 9 6 v10" fill="none" stroke="#C9A227" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M11 22 h18 M20 22 v5" stroke="#F5F1E8" stroke-width="1.5"/>
+      </svg>
+      Mobilya Ağı
+    </a>
+    <div class="side-label">Yönetim Menüsü</div>
+    <ul class="panel-nav">
+      <li><button class="active" data-section="genel"><span class="dot"></span> Genel Bakış</button></li>
+      <li><button data-section="onaylar"><span class="dot"></span> Firma Onayları</button></li>
+      <li><button data-section="talepler"><span class="dot"></span> Talepler</button></li>
+      <li><button data-section="teklifler"><span class="dot"></span> Teklifler</button></li>
+      <li><button data-section="raporlar"><span class="dot"></span> Raporlar</button></li>
+    </ul>
+    <div class="side-foot">
+      Demo Görünümleri<br>
+      <a href="index.html">← Siteye Dön</a>
+    </div>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <main class="panel-main">
+    <div class="panel-topbar">
+      <div>
+        <h1>Yönetim Paneli</h1>
+        <div class="sub">Platform geneli metrikler ve onay süreçleri.</div>
+      </div>
+      <div class="user-chip">
+        <div class="avatar">M</div>
+        <div><div class="u-name">Platform Yönetimi</div><div class="u-role">Admin</div></div>
+      </div>
+    </div>
+
+    <div class="demo-switch">
+      <a href="panel-alici.html">Alıcı</a>
+      <a href="panel-satici.html">Satıcı</a>
+      <a href="panel-admin.html" class="active">Yönetim</a>
+    </div>
+
+    <!-- ===== GENEL BAKIŞ ===== -->
+    <section data-section-view="genel">
+      <div class="stat-cards four">
+        <div class="scard reveal"><div class="lbl">Toplam Firma</div><b>247</b><div class="trend">240 üretici · 7 bekliyor</div></div>
+        <div class="scard reveal" data-delay="80"><div class="lbl">Bekleyen Onay</div><b>5</b><div class="trend down">İşlem gerekiyor</div></div>
+        <div class="scard reveal" data-delay="160"><div class="lbl">Bu Ay Talep</div><b>1.842</b><div class="trend">+%14 geçen aya göre</div></div>
+        <div class="scard reveal" data-delay="240"><div class="lbl">Eşleşme Oranı</div><b>%71</b><div class="trend">Talep → teklif</div></div>
+      </div>
+
+      <div class="panel-block reveal">
+        <div class="bar-chart">
+          <div class="chart-head">
+            <div>
+              <h3>Aylık Talep Hacmi</h3>
+              <div class="muted" style="font-size:13px;">Son 8 ay · oluşturulan fiyat talebi</div>
+            </div>
+            <div class="eyebrow" style="color:var(--brass);">2026</div>
+          </div>
+          <div class="bars">
+            <div class="bar-col"><div class="bar" style="height:44%"><span class="bar-val">1.02k</span></div><div class="bar-lbl">Ara</div></div>
+            <div class="bar-col"><div class="bar" style="height:52%"><span class="bar-val">1.18k</span></div><div class="bar-lbl">Oca</div></div>
+            <div class="bar-col"><div class="bar" style="height:48%"><span class="bar-val">1.09k</span></div><div class="bar-lbl">Şub</div></div>
+            <div class="bar-col"><div class="bar" style="height:63%"><span class="bar-val">1.41k</span></div><div class="bar-lbl">Mar</div></div>
+            <div class="bar-col"><div class="bar" style="height:70%"><span class="bar-val">1.55k</span></div><div class="bar-lbl">Nis</div></div>
+            <div class="bar-col"><div class="bar" style="height:66%"><span class="bar-val">1.48k</span></div><div class="bar-lbl">May</div></div>
+            <div class="bar-col"><div class="bar" style="height:78%"><span class="bar-val">1.69k</span></div><div class="bar-lbl">Haz</div></div>
+            <div class="bar-col peak"><div class="bar" style="height:92%"><span class="bar-val">1.84k</span></div><div class="bar-lbl">Tem</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FİRMA ONAYLARI ===== -->
+    <section data-section-view="onaylar" style="display:none;">
+      <div class="panel-block">
+        <h2>Firma Onayları</h2>
+        <p class="muted" style="margin-bottom:var(--s-5);">Kayıt olan üreticileri inceleyin. Onayla / Reddet ile durumu güncelleyin.</p>
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Firma</th><th>Kategori</th><th>Şehir</th><th>Başvuru</th><th>Durum</th><th>İşlem</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="t-strong">Bereket Ahşap Ltd.</td><td>Yemek Odası</td><td>Kayseri</td><td>12.07.2026</td>
+                <td><span class="status wait" data-status-chip>Bekliyor</span></td>
+                <td data-row-actions><button class="btn btn-primary btn-sm" data-approve>Onayla</button> <button class="btn btn-ghost btn-sm" data-reject>Reddet</button></td>
+              </tr>
+              <tr>
+                <td class="t-strong">Vira Mobilya A.Ş.</td><td>Oturma Grubu</td><td>İstanbul</td><td>11.07.2026</td>
+                <td><span class="status wait" data-status-chip>Bekliyor</span></td>
+                <td data-row-actions><button class="btn btn-primary btn-sm" data-approve>Onayla</button> <button class="btn btn-ghost btn-sm" data-reject>Reddet</button></td>
+              </tr>
+              <tr>
+                <td class="t-strong">Sedir Kontrat</td><td>Kontrat Proje</td><td>Ankara</td><td>10.07.2026</td>
+                <td><span class="status wait" data-status-chip>Bekliyor</span></td>
+                <td data-row-actions><button class="btn btn-primary btn-sm" data-approve>Onayla</button> <button class="btn btn-ghost btn-sm" data-reject>Reddet</button></td>
+              </tr>
+              <tr>
+                <td class="t-strong">Anadolu Metal Furniture</td><td>Ofis</td><td>Konya</td><td>09.07.2026</td>
+                <td><span class="status wait" data-status-chip>Bekliyor</span></td>
+                <td data-row-actions><button class="btn btn-primary btn-sm" data-approve>Onayla</button> <button class="btn btn-ghost btn-sm" data-reject>Reddet</button></td>
+              </tr>
+              <tr>
+                <td class="t-strong">Loft Aydınlatma</td><td>Aydınlatma</td><td>İzmir</td><td>08.07.2026</td>
+                <td><span class="status wait" data-status-chip>Bekliyor</span></td>
+                <td data-row-actions><button class="btn btn-primary btn-sm" data-approve>Onayla</button> <button class="btn btn-ghost btn-sm" data-reject>Reddet</button></td>
+              </tr>
+              <tr>
+                <td class="t-strong">Karaca Mobilya</td><td>Oturma Grubu</td><td>Bursa</td><td>02.07.2026</td>
+                <td><span class="status done" data-status-chip>Onaylandı</span></td>
+                <td data-row-actions><span class="muted" style="font-size:12px;">İşlem tamamlandı</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TALEPLER ===== -->
+    <section data-section-view="talepler" style="display:none;">
+      <div class="panel-block">
+        <h2>Platform Talep İzleme</h2>
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Talep No</th><th>Alıcı</th><th>Üretici</th><th>Ürün</th><th>Adet</th><th>Teklif Sayısı</th><th>Durum</th></tr></thead>
+            <tbody>
+              <tr><td class="t-id">TLP-2049</td><td>Demir İç Mimarlık</td><td>Karaca Mobilya</td><td>Nordica 3'lü Kanepe</td><td>24</td><td>3</td><td><span class="status active">Aktif</span></td></tr>
+              <tr><td class="t-id">TLP-2046</td><td>Boğaziçi Otelcilik</td><td>Karaca Mobilya</td><td>Nordica Koleksiyonu</td><td>8 set</td><td>1</td><td><span class="status active">Aktif</span></td></tr>
+              <tr><td class="t-id">TLP-2044</td><td>Demir İç Mimarlık</td><td>Öztürk Masif</td><td>Meşe Ova Yemek Masası</td><td>15</td><td>0</td><td><span class="status wait">Bekliyor</span></td></tr>
+              <tr><td class="t-id">TLP-2041</td><td>Vadi AVM Yönetimi</td><td>Karaca Mobilya</td><td>Karaca Sandalye Takımı</td><td>60</td><td>2</td><td><span class="status active">Görüşülüyor</span></td></tr>
+              <tr><td class="t-id">TLP-2029</td><td>Lava Restoran Grubu</td><td>Karaca Mobilya</td><td>Nordica Bench Puf</td><td>50</td><td>4</td><td><span class="status done">Sonuçlandı</span></td></tr>
+              <tr><td class="t-id">TLP-2021</td><td>Demir İç Mimarlık</td><td>Linea Modüler</td><td>Linea Modüler Kanepe</td><td>12</td><td>3</td><td><span class="status done">Sonuçlandı</span></td></tr>
+              <tr><td class="t-id">TLP-2007</td><td>Ceyra Yapı</td><td>Meltem Koltuk</td><td>Meltem Karyola Seti</td><td>30</td><td>0</td><td><span class="status cancel">İptal</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TEKLİFLER ===== -->
+    <section data-section-view="teklifler" style="display:none;">
+      <div class="panel-block">
+        <h2>Teklif İzleme</h2>
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Teklif No</th><th>Talep</th><th>Üretici</th><th>Alıcı</th><th>Tutar</th><th>Durum</th></tr></thead>
+            <tbody>
+              <tr><td class="t-id">TKF-3120</td><td>TLP-2049</td><td>Karaca Mobilya</td><td>Demir İç Mimarlık</td><td>₺148.500</td><td><span class="status active">İnceleniyor</span></td></tr>
+              <tr><td class="t-id">TKF-3119</td><td>TLP-2049</td><td>Vira Mobilya</td><td>Demir İç Mimarlık</td><td>₺162.000</td><td><span class="status active">İnceleniyor</span></td></tr>
+              <tr><td class="t-id">TKF-3118</td><td>TLP-2049</td><td>Bereket Ahşap</td><td>Demir İç Mimarlık</td><td>₺155.200</td><td><span class="status active">İnceleniyor</span></td></tr>
+              <tr><td class="t-id">TKF-3101</td><td>TLP-2029</td><td>Karaca Mobilya</td><td>Lava Restoran Grubu</td><td>₺105.000</td><td><span class="status done">Kabul Edildi</span></td></tr>
+              <tr><td class="t-id">TKF-3088</td><td>TLP-2018</td><td>Karaca Mobilya</td><td>Marmara Ofis A.Ş.</td><td>₺68.000</td><td><span class="status cancel">Reddedildi</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== RAPORLAR ===== -->
+    <section data-section-view="raporlar" style="display:none;">
+      <div class="stat-cards four">
+        <div class="scard"><div class="lbl">Toplam Talep (Yıl)</div><b>11.2k</b><div class="trend">+%22</div></div>
+        <div class="scard"><div class="lbl">Ort. İlk Teklif</div><b>36 sa</b><div class="trend">Hızlanıyor</div></div>
+        <div class="scard"><div class="lbl">Aktif Alıcı</div><b>1.340</b><div class="trend">+186 bu ay</div></div>
+        <div class="scard"><div class="lbl">İhracat Ülke</div><b>12</b><div class="trend">3 yeni pazar</div></div>
+      </div>
+      <div class="panel-block">
+        <div class="bar-chart">
+          <div class="chart-head"><div><h3>Kategori Bazlı Talep Dağılımı</h3><div class="muted" style="font-size:13px;">Bu ay · kategoriye göre talep payı</div></div></div>
+          <div class="bars">
+            <div class="bar-col peak"><div class="bar" style="height:88%"><span class="bar-val">%34</span></div><div class="bar-lbl">Oturma</div></div>
+            <div class="bar-col"><div class="bar" style="height:64%"><span class="bar-val">%25</span></div><div class="bar-lbl">Yemek</div></div>
+            <div class="bar-col"><div class="bar" style="height:52%"><span class="bar-val">%20</span></div><div class="bar-lbl">Yatak</div></div>
+            <div class="bar-col"><div class="bar" style="height:34%"><span class="bar-val">%13</span></div><div class="bar-lbl">Ofis</div></div>
+            <div class="bar-col"><div class="bar" style="height:20%"><span class="bar-val">%8</span></div><div class="bar-lbl">Aydınl.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

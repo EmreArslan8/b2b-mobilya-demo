@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Satıcı Paneli — Mobilya Ağı</title>
+<meta name="description" content="Satıcı paneli: kataloğunuz, gelen talepler ve verdiğiniz teklifler.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="panel-layout">
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="panel-side" data-section-nav>
+    <a href="index.html" class="wordmark">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect x="4" y="4" width="32" height="32" rx="6" fill="none" stroke="#F5F1E8" stroke-width="1.5"/>
+        <path d="M11 27 V17 l9-6 9 6 v10" fill="none" stroke="#C9A227" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M11 22 h18 M20 22 v5" stroke="#F5F1E8" stroke-width="1.5"/>
+      </svg>
+      Mobilya Ağı
+    </a>
+    <div class="side-label">Üretici Menüsü</div>
+    <ul class="panel-nav">
+      <li><button class="active" data-section="genel"><span class="dot"></span> Genel Bakış</button></li>
+      <li><button data-section="katalog"><span class="dot"></span> Kataloğum</button></li>
+      <li><button data-section="talepler"><span class="dot"></span> Gelen Talepler</button></li>
+      <li><button data-section="teklifler"><span class="dot"></span> Verdiğim Teklifler</button></li>
+      <li><button data-section="mesajlar"><span class="dot"></span> Mesajlar</button></li>
+      <li><button data-section="profil"><span class="dot"></span> Firma Profili</button></li>
+    </ul>
+    <div class="side-foot">
+      Demo Görünümleri<br>
+      <a href="index.html">← Siteye Dön</a>
+    </div>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <main class="panel-main">
+    <div class="panel-topbar">
+      <div>
+        <h1>Satıcı Paneli</h1>
+        <div class="sub">Kataloğunuz, gelen talepler ve dönüşüm performansınız.</div>
+      </div>
+      <div class="user-chip">
+        <div class="avatar">K</div>
+        <div><div class="u-name">Karaca Mobilya</div><div class="u-role">Doğrulanmış Üretici</div></div>
+      </div>
+    </div>
+
+    <div class="demo-switch">
+      <a href="panel-alici.html">Alıcı</a>
+      <a href="panel-satici.html" class="active">Satıcı</a>
+      <a href="panel-admin.html">Yönetim</a>
+    </div>
+
+    <!-- ===== GENEL BAKIŞ ===== -->
+    <section data-section-view="genel">
+      <div class="stat-cards three">
+        <div class="scard reveal"><div class="lbl">Katalogdaki Ürün</div><b>48</b><div class="trend">6 koleksiyon</div></div>
+        <div class="scard reveal" data-delay="100"><div class="lbl">Yeni Talep</div><b>6</b><div class="trend">Yanıt bekliyor</div></div>
+        <div class="scard reveal" data-delay="200"><div class="lbl">Dönüşüm</div><b>%38</b><div class="trend">Teklif → anlaşma</div></div>
+      </div>
+
+      <div class="panel-block reveal">
+        <h2>Yanıt Bekleyen Talepler <button class="btn btn-ghost btn-sm" data-section="talepler">Tümünü Gör</button></h2>
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Talep No</th><th>Alıcı</th><th>Ürün / Koleksiyon</th><th>Adet</th><th>Tarih</th><th>Durum</th><th></th></tr></thead>
+            <tbody>
+              <tr><td class="t-id">TLP-2049</td><td class="t-strong">Demir İç Mimarlık</td><td>Nordica 3'lü Kanepe</td><td>24</td><td>12.07.2026</td><td><span class="status wait">Yeni</span></td><td><button class="btn btn-primary btn-sm" data-modal-open="offerModal">Teklif Ver</button></td></tr>
+              <tr><td class="t-id">TLP-2046</td><td class="t-strong">Boğaziçi Otelcilik</td><td>Nordica Koleksiyonu (tam set)</td><td>8 set</td><td>11.07.2026</td><td><span class="status wait">Yeni</span></td><td><button class="btn btn-primary btn-sm" data-modal-open="offerModal">Teklif Ver</button></td></tr>
+              <tr><td class="t-id">TLP-2041</td><td class="t-strong">Vadi AVM Yönetimi</td><td>Karaca Sandalye Takımı</td><td>60</td><td>10.07.2026</td><td><span class="status active">Görüşülüyor</span></td><td><button class="btn btn-ghost btn-sm" data-section="mesajlar">Mesaj</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== KATALOĞUM ===== -->
+    <section data-section-view="katalog" style="display:none;">
+      <div class="panel-block">
+        <h2>Kataloğum <button class="btn btn-primary btn-sm" data-section="katalog">Yeni Ürün Ekle</button></h2>
+        <div class="manage-grid">
+          <div class="mcard">
+            <div class="illo mat-walnut"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=82" alt="Modern kanepe ürün fotoğrafı" loading="lazy"></div>
+            <div class="m-body"><h4>Nordica 3'lü Kanepe</h4><div class="muted" style="font-size:12px;">Oturma Grubu · min. 10 adet</div><div class="m-row"><button class="toggle-chip on" data-toggle-chip>Yayında</button><button class="btn btn-ghost btn-sm" data-demo-action="Açılıyor…">Düzenle</button></div></div>
+          </div>
+          <div class="mcard">
+            <div class="illo mat-oak"><img src="https://images.unsplash.com/photo-1567016432779-094069958ea5?auto=format&fit=crop&w=900&q=82" alt="Ceviz kaplama sandalye takımı" loading="lazy"></div>
+            <div class="m-body"><h4>Karaca Sandalye Takımı</h4><div class="muted" style="font-size:12px;">Yemek Odası · min. 6 adet</div><div class="m-row"><button class="toggle-chip on" data-toggle-chip>Yayında</button><button class="btn btn-ghost btn-sm" data-demo-action="Açılıyor…">Düzenle</button></div></div>
+          </div>
+          <div class="mcard">
+            <div class="illo mat-clay"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=82" alt="Bukle kumaş modern berjer" loading="lazy"></div>
+            <div class="m-body"><h4>Nordica Berjer</h4><div class="muted" style="font-size:12px;">Oturma Grubu · min. 10 adet</div><div class="m-row"><button class="toggle-chip" data-toggle-chip>Taslak</button><button class="btn btn-ghost btn-sm" data-demo-action="Açılıyor…">Düzenle</button></div></div>
+          </div>
+          <div class="mcard">
+            <div class="illo mat-linen"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=82" alt="Keten kumaş bench puf" loading="lazy"></div>
+            <div class="m-body"><h4>Nordica Bench Puf</h4><div class="muted" style="font-size:12px;">Oturma Grubu · min. 20 adet</div><div class="m-row"><button class="toggle-chip on" data-toggle-chip>Yayında</button><button class="btn btn-ghost btn-sm" data-demo-action="Açılıyor…">Düzenle</button></div></div>
+          </div>
+          <div class="mcard">
+            <div class="illo mat-oak"><img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=900&q=82" alt="Masif ceviz orta sehpa" loading="lazy"></div>
+            <div class="m-body"><h4>Nordica Orta Sehpa</h4><div class="muted" style="font-size:12px;">Oturma Grubu · min. 15 adet</div><div class="m-row"><button class="toggle-chip on" data-toggle-chip>Yayında</button><button class="btn btn-ghost btn-sm" data-demo-action="Açılıyor…">Düzenle</button></div></div>
+          </div>
+          <button class="mcard-add" data-demo-action="Ürün ekleme formu açılıyor…">
+            <span class="plus">+</span>
+            <span style="font-weight:600;">Yeni Ürün Ekle</span>
+            <span style="font-size:12px;">Fotoğraf, özellik ve min. adet</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GELEN TALEPLER ===== -->
+    <section data-section-view="talepler" style="display:none;">
+      <div class="panel-block">
+        <h2>Gelen Talepler</h2>
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Talep No</th><th>Alıcı</th><th>Ürün / Koleksiyon</th><th>Adet</th><th>Teslim</th><th>Tarih</th><th>Durum</th><th></th></tr></thead>
+            <tbody>
+              <tr><td class="t-id">TLP-2049</td><td class="t-strong">Demir İç Mimarlık</td><td>Nordica 3'lü Kanepe</td><td>24</td><td>İstanbul</td><td>12.07.2026</td><td><span class="status wait">Yeni</span></td><td><button class="btn btn-primary btn-sm" data-modal-open="offerModal">Teklif Ver</button></td></tr>
+              <tr><td class="t-id">TLP-2046</td><td class="t-strong">Boğaziçi Otelcilik</td><td>Nordica Koleksiyonu</td><td>8 set</td><td>Bodrum</td><td>11.07.2026</td><td><span class="status wait">Yeni</span></td><td><button class="btn btn-primary btn-sm" data-modal-open="offerModal">Teklif Ver</button></td></tr>
+              <tr><td class="t-id">TLP-2041</td><td class="t-strong">Vadi AVM Yönetimi</td><td>Karaca Sandalye Takımı</td><td>60</td><td>Ankara</td><td>10.07.2026</td><td><span class="status active">Görüşülüyor</span></td><td><button class="btn btn-ghost btn-sm" data-section="mesajlar">Mesaj</button></td></tr>
+              <tr><td class="t-id">TLP-2035</td><td class="t-strong">Ege Yapı Kooperatifi</td><td>Nordica Berjer</td><td>36</td><td>İzmir</td><td>08.07.2026</td><td><span class="status active">Teklif Verildi</span></td><td><button class="btn btn-ghost btn-sm" data-section="teklifler">Görüntüle</button></td></tr>
+              <tr><td class="t-id">TLP-2029</td><td class="t-strong">Lava Restoran Grubu</td><td>Nordica Bench Puf</td><td>50</td><td>İstanbul</td><td>05.07.2026</td><td><span class="status done">Sonuçlandı</span></td><td><span class="muted" style="font-size:12px;">Kazanıldı</span></td></tr>
+              <tr><td class="t-id">TLP-2018</td><td class="t-strong">Marmara Ofis A.Ş.</td><td>Nordica Orta Sehpa</td><td>20</td><td>Kocaeli</td><td>30.06.2026</td><td><span class="status cancel">Kaybedildi</span></td><td><span class="muted" style="font-size:12px;">Kapandı</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== VERDİĞİM TEKLİFLER ===== -->
+    <section data-section-view="teklifler" style="display:none;">
+      <div class="panel-block">
+        <h2>Verdiğim Teklifler</h2>
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Talep No</th><th>Alıcı</th><th>Ürün</th><th>Birim Fiyat</th><th>Toplam</th><th>Geçerlilik</th><th>Durum</th></tr></thead>
+            <tbody>
+              <tr><td class="t-id">TLP-2049</td><td class="t-strong">Demir İç Mimarlık</td><td>Nordica 3'lü Kanepe</td><td>₺6.187</td><td>₺148.500</td><td>10 gün</td><td><span class="status active">İnceleniyor</span></td></tr>
+              <tr><td class="t-id">TLP-2035</td><td class="t-strong">Ege Yapı Kooperatifi</td><td>Nordica Berjer</td><td>₺4.250</td><td>₺153.000</td><td>7 gün</td><td><span class="status wait">Yanıt Bekliyor</span></td></tr>
+              <tr><td class="t-id">TLP-2029</td><td class="t-strong">Lava Restoran Grubu</td><td>Nordica Bench Puf</td><td>₺2.100</td><td>₺105.000</td><td>—</td><td><span class="status done">Kabul Edildi</span></td></tr>
+              <tr><td class="t-id">TLP-2018</td><td class="t-strong">Marmara Ofis A.Ş.</td><td>Nordica Orta Sehpa</td><td>₺3.400</td><td>₺68.000</td><td>—</td><td><span class="status cancel">Reddedildi</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MESAJLAR ===== -->
+    <section data-section-view="mesajlar" style="display:none;">
+      <div class="panel-block">
+        <h2>Mesajlar</h2>
+        <div class="thread" data-thread>
+          <div class="thread-head">
+            <div class="avatar">D</div>
+            <div><div style="font-weight:600;">Demir İç Mimarlık</div><div class="muted" style="font-size:12px;">TLP-2049 · Nordica 3'lü Kanepe</div></div>
+          </div>
+          <div class="thread-body">
+            <div class="bubble them">28 iş günü teslim süresi otel açılışımıza yetişir mi, garanti verebilir misiniz?<span class="time">Bugün 09:20</span></div>
+            <div class="bubble me">Sipariş onayında üretim planına alıp yazılı teslim taahhüdü veriyoruz. Numune kumaş da gönderebiliriz.<span class="time">Bugün 09:24</span></div>
+            <div class="bubble them">Harika, numune için adresi ileteyim.<span class="time">Bugün 09:26</span></div>
+          </div>
+          <form class="thread-input"><input type="text" placeholder="Mesaj yazın…" aria-label="Mesaj"><button type="submit" class="btn btn-primary btn-sm">Gönder</button></form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FİRMA PROFİLİ ===== -->
+    <section data-section-view="profil" style="display:none;">
+      <div class="panel-block" style="max-width:640px;">
+        <h2>Firma Profili</h2>
+        <div class="maker-card" style="margin-bottom:var(--s-6);">
+          <div class="avatar">K</div>
+          <div style="flex:1;"><div class="m-name">Karaca Mobilya</div><div class="m-meta"><span class="m-verified">✓ Doğrulanmış üretici</span> · 14 yıl · İnegöl / Bursa</div></div>
+        </div>
+        <div class="field"><label>Firma Adı</label><input type="text" value="Karaca Mobilya San. ve Tic. Ltd. Şti." readonly></div>
+        <div class="field-row">
+          <div class="field"><label>Kuruluş</label><input type="text" value="2012" readonly></div>
+          <div class="field"><label>Çalışan Sayısı</label><input type="text" value="45" readonly></div>
+        </div>
+        <div class="field"><label>Üretim Kategorileri</label>
+          <div class="pill-list"><span class="pill">Oturma Grubu</span><span class="pill">Yemek Odası</span><span class="pill">Kontrat Proje</span></div>
+        </div>
+        <div class="field"><label>Hakkında</label><textarea readonly>İnegöl merkezli, masif ahşap iskelet ve kontrat mobilya üretiminde uzman. Otel, restoran ve kurumsal projelere özel üretim.</textarea></div>
+        <button class="btn btn-primary" data-demo-action="Kaydedildi ✓">Profili Güncelle</button>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ============ TEKLİF VER MODAL ============ -->
+<div class="modal-overlay" id="offerModal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="offerTitle">
+    <div class="modal-head">
+      <button class="modal-close" data-modal-close aria-label="Kapat">×</button>
+      <h3 id="offerTitle">Teklif Ver</h3>
+      <p>TLP-2049 · Demir İç Mimarlık · Nordica 3'lü Kanepe · 24 adet</p>
+    </div>
+    <form data-demo-form data-prefix="TKF">
+      <div class="form-fields">
+        <div class="modal-body">
+          <div class="field-row">
+            <div class="field"><label for="of-birim">Birim Fiyat (₺)</label><input id="of-birim" type="number" value="6187" required></div>
+            <div class="field"><label for="of-adet">Adet</label><input id="of-adet" type="number" value="24" required></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="of-teslim">Teslim Süresi (iş günü)</label><input id="of-teslim" type="number" value="28" required></div>
+            <div class="field"><label for="of-gecerli">Geçerlilik (gün)</label><input id="of-gecerli" type="number" value="10" required></div>
+          </div>
+          <div class="field"><label for="of-kumas">Kumaş / Kaplama</label>
+            <select id="of-kumas"><option>Bukle Krem</option><option>Kadife Antrasit</option><option>Keten Taş</option></select>
+          </div>
+          <div class="field"><label for="of-not">Not</label><textarea id="of-not" placeholder="Örn. Numune kumaş gönderilebilir. Peşinat %40."></textarea></div>
+        </div>
+        <div class="modal-foot">
+          <button type="button" class="btn btn-ghost" data-modal-close>Vazgeç</button>
+          <button type="submit" class="btn btn-primary">Teklifi Gönder</button>
+        </div>
+      </div>
+      <div class="form-success">
+        <div class="tick">✓</div>
+        <h3>Teklif gönderildi</h3>
+        <p>Teklifiniz <span class="rfq-no" data-rfq-no>TKF-2049</span> numarasıyla alıcının paneline iletildi.</p>
+        <div class="center-btn" style="margin-top:var(--s-6);"><button class="btn btn-primary" data-modal-close>Tamam</button></div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
